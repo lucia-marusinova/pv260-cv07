@@ -29,7 +29,7 @@ jobs:
       - name: Set up .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: '8.0.x'
 
       - name: Restore dependencies
         run: dotnet restore
@@ -38,7 +38,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Publish the Blazor WebAssembly app
-        run: dotnet publish ./cv07/cv07.csproj -c Release -o artifacts
+        run: dotnet publish ./BlazorToDeploy/BlazorToDeploy.csproj -c Release -o artifacts
         
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3.0.1
