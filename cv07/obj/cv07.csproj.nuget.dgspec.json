@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\terez\\RiderProjects\\cv07\\cv07\\cv07.csproj": {}
+    "/Users/lucia/RiderProjects/pv260-cv07/cv07/cv07.csproj": {}
   },
   "projects": {
-    "C:\\Users\\terez\\RiderProjects\\cv07\\cv07\\cv07.csproj": {
+    "/Users/lucia/RiderProjects/pv260-cv07/cv07/cv07.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\terez\\RiderProjects\\cv07\\cv07\\cv07.csproj",
+        "projectUniqueName": "/Users/lucia/RiderProjects/pv260-cv07/cv07/cv07.csproj",
         "projectName": "cv07",
-        "projectPath": "C:\\Users\\terez\\RiderProjects\\cv07\\cv07\\cv07.csproj",
-        "packagesPath": "C:\\Users\\terez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\terez\\RiderProjects\\cv07\\cv07\\obj\\",
+        "projectPath": "/Users/lucia/RiderProjects/pv260-cv07/cv07/cv07.csproj",
+        "packagesPath": "/Users/lucia/.nuget/packages/",
+        "outputPath": "/Users/lucia/RiderProjects/pv260-cv07/cv07/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\terez\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/lucia/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -32,7 +32,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -46,6 +52,24 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.36, )"
+            },
+            "Microsoft.NET.ILLink.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.Sdk.WebAssembly.Pack": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "autoReferenced": true
             }
           },
           "imports": [
@@ -61,6 +85,14 @@
           "warn": true,
           "downloadDependencies": [
             {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
               "version": "[6.0.36, 6.0.36]"
             }
@@ -70,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
