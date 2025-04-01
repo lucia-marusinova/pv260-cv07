@@ -32,11 +32,12 @@ jobs:
       - name: Build the app
         run: dotnet build --configuration Release --no-restore
 
-      - name: Publish the Blazor WebAssembly app
-        run: dotnet publish ./cv07/cv07.csproj -c Release -o publish
+      # - name: Publish the Blazor WebAssembly app
+      #   run: dotnet publish ./cv07/cv07.csproj -c Release -o publish
+        
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3.0.1
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./publish/wwwroot
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v4.0.5
+      
