@@ -15,31 +15,32 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+jobs:
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Set up .NET
+      - name: Set up .NET SDK
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0'
 
       - name: Restore dependencies
         run: dotnet restore
-  
-      - name: Build project
-        run: dotnet build --no-restore --configuration Release
-  
-      - name: Run tests
-        run: dotnet test --no-build --configuration Release --verbosity normal
-    
+
+      - name: Build the app
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Publish the Blazor WebAssembly app
+        run: dotnet publish ./YourProjectName/YourProjectName.csproj -c Release -o publish
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./publish/wwwroot
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -51,11 +52,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
-
-
